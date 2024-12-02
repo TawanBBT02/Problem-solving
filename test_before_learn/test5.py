@@ -1,0 +1,5 @@
+print("***Convert BMI***")
+weight = int(input("Enter your Weight (kg) : "))
+height = int(input("Enter your Height (m) : "))
+bmi = float(weight/(height**2))
+print(f"Your BMI is :{format(bmi,'.5f')}")
