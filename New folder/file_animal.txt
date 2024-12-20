@@ -1,0 +1,7 @@
+01 Giraffe Mammal 10/7/2020 4 Lotus Herbivore
+02 Hippo Mammal 15/5/2021 3 YouTube Herbivore
+03 Tiger Mammal 13/4/2020 4 Songkran Carnivore
+04 Turtle Reptilia 29/8/2019 5 Lambo Herbivore
+05 Capybara Mammal 30/3/2022 2 Dom Herbivore
+06 Clownfish Aquatic 2/9/2019 5 Brian Herbivore
+07 Lion Mammal 5/4/2018 6 McLauren Carnivore

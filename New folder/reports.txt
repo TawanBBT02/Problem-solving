@@ -1,0 +1,120 @@
+Category             Value               
+========================================
+Mammals              5                   
+Reptilia             1                   
+Aquatic              3                   
+Herbivore            7                   
+Carnivore            2                   
+Max Age              20                  
+Min Age              3                   
+Earliest Birthdate   1/5/2020            
+Latest Birthdate     3/6/2015            
+Max Value            300000.00           
+Min Value            900.23              
+========================================
+
+All Animals
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+90   Monkey            Mammal    19/3/2021   3         Jor         Herbivore    900.23
+54   Tiger             Mammal    17/6/2000   4         Hong        Carnivore    80540.44
+3    Dolphin           Aquatic   1/5/2020    4         Einstein    Herbivore    150000.00
+4    Capybara          Mammal    23/7/2016   8         Y           Herbivore    50000.00
+2    Turtle            Reptilia  13/4/2009   15        Sam         Herbivore    40050.25
+1    Whale             Aquatic   20/8/2004   20        Oomy        Carnivore    300000.00
+6    Clownfish         Aquatic   3/6/2015    9         Pond        Herbivore    5000.00
+7    Zebra             Mammal    12/5/2014   10        Jeng        Herbivore    52000.00
+8    Hippo             Mammal    20/01/2000  12        Few         Herbivore    20000.00
+----------------------------------------------------------------------------------------------------
+All Animals : 9
+Total Animals : 698490.92
+----------------------------------------------------------------------------------------------------
+
+Category Mammals
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+90   Monkey            Mammal    19/3/2021   3         Jor         Herbivore    900.23
+54   Tiger             Mammal    17/6/2000   4         Hong        Carnivore    80540.44
+4    Capybara          Mammal    23/7/2016   8         Y           Herbivore    50000.00
+7    Zebra             Mammal    12/5/2014   10        Jeng        Herbivore    52000.00
+8    Hippo             Mammal    20/01/2000  12        Few         Herbivore    20000.00
+----------------------------------------------------------------------------------------------------
+Total Mammal : 5
+Total Animals : 203440.67
+----------------------------------------------------------------------------------------------------
+
+Category Reptilia
+Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+2    Turtle            Reptilia  13/4/2009   15        Sam         Herbivore    40050.25
+----------------------------------------------------------------------------------------------------
+Total Reptilia : 1
+----------------------------------------------------------------------------------------------------
+
+Category Aquatic
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+3    Dolphin           Aquatic   1/5/2020    4         Einstein    Herbivore    150000.00
+1    Whale             Aquatic   20/8/2004   20        Oomy        Carnivore    300000.00
+6    Clownfish         Aquatic   3/6/2015    9         Pond        Herbivore    5000.00
+----------------------------------------------------------------------------------------------------
+Total Aquatic : 3
+----------------------------------------------------------------------------------------------------
+
+Category Herbivore
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+90   Monkey            Mammal    19/3/2021   3         Jor         Herbivore    900.23
+3    Dolphin           Aquatic   1/5/2020    4         Einstein    Herbivore    150000.00
+4    Capybara          Mammal    23/7/2016   8         Y           Herbivore    50000.00
+2    Turtle            Reptilia  13/4/2009   15        Sam         Herbivore    40050.25
+6    Clownfish         Aquatic   3/6/2015    9         Pond        Herbivore    5000.00
+7    Zebra             Mammal    12/5/2014   10        Jeng        Herbivore    52000.00
+8    Hippo             Mammal    20/01/2000  12        Few         Herbivore    20000.00
+----------------------------------------------------------------------------------------------------
+Total Herbivore : 7
+----------------------------------------------------------------------------------------------------
+
+Category Carnivore
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+54   Tiger             Mammal    17/6/2000   4         Hong        Carnivore    80540.44
+1    Whale             Aquatic   20/8/2004   20        Oomy        Carnivore    300000.00
+----------------------------------------------------------------------------------------------------
+Total Carnivore : 2
+----------------------------------------------------------------------------------------------------
+
+Category Max Age
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+1    Whale             Aquatic   20/8/2004   20        Oomy        Carnivore    300000.00
+----------------------------------------------------------------------------------------------------
+
+Category Min Age
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+90   Monkey            Mammal    19/3/2021   3         Jor         Herbivore    900.23
+----------------------------------------------------------------------------------------------------
+
+Category Earliest Birthdate
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+3    Dolphin           Aquatic   1/5/2020    4         Einstein    Herbivore    150000.00
+
+Category Latest Birthdate
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+6    Clownfish         Aquatic   3/6/2015    9         Pond        Herbivore    5000.00
+----------------------------------------------------------------------------------------------------
+
+Category Max Value
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+1    Whale             Aquatic   20/8/2004   20        Oomy        Carnivore    300000.00
+----------------------------------------------------------------------------------------------------
+
+Category Min Value
+ID | Animal Category | Species | Birthdate | Age |     Name     |  Food Type  | Value
+====================================================================================================
+90   Monkey            Mammal    19/3/2021   3         Jor         Herbivore    900.23
+----------------------------------------------------------------------------------------------------
