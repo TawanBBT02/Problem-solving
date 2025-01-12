@@ -13,7 +13,6 @@ def mode(data):
             dict_data[i] += 1
         else:
             dict_data[i] = 1
-    print(dict_data)
     highest_data = max(dict_data, key=dict_data.get)
     highest_value = dict_data[highest_data]
     return {highest_data:highest_value}
