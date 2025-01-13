@@ -1,5 +1,4 @@
 def fibonacci(n):
-    print(n)
     if n==1:
 
         return 0
@@ -13,7 +12,9 @@ def fibonacci(n):
         return (fibonacci(n-1) + fibonacci(n-2) + fibonacci(n-3)) 
     
     
-def sohw_fibonacci():
-    pass
-
-print(fibonacci(5))
+def sohw_fibonacci(n):
+    result = []
+    for i in range(1,n+1):
+        result.append(fibonacci(i))
+    return result
+print(sohw_fibonacci(13))
