@@ -13,6 +13,7 @@ def fibonacci(n):
         return (fibonacci(n-1) + fibonacci(n-2) + fibonacci(n-3)) 
     
     
-
+def sohw_fibonacci():
+    pass
 
 print(fibonacci(5))
