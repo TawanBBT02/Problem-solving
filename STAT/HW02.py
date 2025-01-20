@@ -1,7 +1,7 @@
 data = [31, 38, 34, 39, 31, 32, 33, 39, 31, 36, 32, 39, 37, 33, 38, 31, 32, 39, 36, 37, 32, 32, 31, 35, 40, 32, 39, 37, 34, 32, 31, 33, 39, 33, 32, 33, 40, 30, 31, 38, 30, 38, 38, 35, 31]
-
+import math
 def average(data):
-    return sum(data)/45
+    return sum(data)/len(data)
 def median(data:list):
     position = (len(data) + 1)/2
     data.sort()
@@ -25,10 +25,12 @@ def Quartile_deviation(data:list):
     result = (Q3-Q1)/2
     return result
 def standard_deviation(data):
-    result = 0
+    rog = 0
     for i in data:
-        result += (i - average(data))**2
-    return result/45
+        rog += (i - average(data))**2
+    rog = rog/(len(data) - 1)
+    result = math.sqrt(rog)
+    return result
 
 print("ค่าเฉลี่ย",average(data))
 print("ค่ามัธยฐาน",median(data))
