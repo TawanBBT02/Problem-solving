@@ -12,9 +12,9 @@ def fibonacci(n):
         return (fibonacci(n-1) + fibonacci(n-2) + fibonacci(n-3)) 
     
     
-def sohw_fibonacci(n):
+def show_fibonacci(n):
     result = []
     for i in range(1,n+1):
         result.append(fibonacci(i))
     return result
-print(sohw_fibonacci(13))
+print(show_fibonacci(13))

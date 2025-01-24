@@ -1,4 +1,4 @@
-print("\tโปรแกรมคำนวณและบันทึกค่าการเผาผลาญแตลอรี่จากการออกกำลังกาย")
+print("\tโปรแกรมคำนวณและบันทึกค่าการเผาผลาญแคลอรี่จากการออกกำลังกาย")
 day = int(input("How many days of exercise : "))
 
 running = 0
@@ -32,6 +32,7 @@ for i in range(1,day+1):
     elif cate.lower() =="swimming" or cate == "3":
         swimming += minute*5*time
         time_swimming += minute*time
+        
 result = running+cycling+swimming
 
 print()
