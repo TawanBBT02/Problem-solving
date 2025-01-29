@@ -6,9 +6,11 @@ def counting_sort(arr, div):
     for i in arr:
         index = (i // div) % 10
         count[index] += 1
+    print(count)
 
     for i in range(1, 10):
         count[i] += count[i - 1]
+    print(count)
 
     for i in reversed(range(n)):
         index = (arr[i] // div) % 10
@@ -17,6 +19,7 @@ def counting_sort(arr, div):
 
     for i in range(n):
         arr[i] = output[i]
+    print(output)
 
 def radix_sort(arr):
     max_num = max(arr)
