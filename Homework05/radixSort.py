@@ -17,6 +17,7 @@ def counting_sort(arr, div):
 
     for i in range(n):
         arr[i] = output[i]
+    print(output)
 
 def radix_sort(arr):
     max_num = max(arr)

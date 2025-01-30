@@ -1,3 +1,4 @@
+#นายวรานนท์ ใจตรง 
 Nstd = int(input("Enter the number of students: "))
 students = []
 for _ in range(Nstd):
@@ -16,7 +17,6 @@ for i in range(len(students)):
             students[j]  =  students[j + 1] 
             students[j + 1] = temp
             
-
 print("\n--Sorted Scores (Bubble Sort)--")
 for name, score in students:
     print(f"{name}: {score}")
@@ -32,7 +32,7 @@ for name, score in students[-1:-4:-1]:
 def search_by_score(score_to_search):
     found_students = [name for name, score in students if score == score_to_search]
     if found_students:
-        print(f"Found student with score {score_to_search}: {', '.join(found_students)}")
+        print(f"Found student with score {score_to_search}")
     else:
         print(f"No students found with score {score_to_search}")
 

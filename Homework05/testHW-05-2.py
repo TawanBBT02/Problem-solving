@@ -26,9 +26,9 @@ class Student_information:
         for name, score in self.students[:top_n]:
             print(f"{name}: {score}")
 
-    def display_bottom_scores(self, bottom_n=3):
-        print(f"\n--Top {bottom_n} Lowest Scores--")
-        for name, score in self.students[-1:-(bottom_n + 1):-1]:
+    def display_bottom_scores(self):
+        print(f"\n--Top 3 Lowest Scores--")
+        for name, score in self.students[-1:-4:-1]:
             print(f"{name}: {score}")
 
     def search_by_score(self, score_to_search):
