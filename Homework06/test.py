@@ -39,7 +39,7 @@ def update_data():
         print("Region not found!\n")
 
 def search_data():
-    print("=== Search Province Data ===")
+    print("=== Search Data ===")
     print("1. Search by Region")
     print("2. Search by Province")
     choice = input("Please select a menu (1-2): ")
@@ -53,7 +53,7 @@ def search_data():
         province = input("Enter province name: ")
         for region in Thailand:
             if province in Thailand[region]:
-                print(f'Province {province} is in {region} region of Thailand')
+                print(f'Province {province} is in {region} of Thailand\n')
 
 def delete_data():
     region = input("Enter the region name to delete data: ")
@@ -74,6 +74,7 @@ def view_all_data():
     if Thailand:
         for region, provinces in Thailand.items():
             print(f"{region.capitalize()}:\n  - " + "\n  - ".join(provinces) + "\n")
+        print("---------------------------------\n")
     else:
         print("No data available!\n")
 
