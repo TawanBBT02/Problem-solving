@@ -14,11 +14,11 @@ Thailand = {
 }
 
 def insert_data():
-    print(f"-\n-".join(Thailand) + "\n")
+    print(f"-"+"\n-".join(Thailand) + "\n")
     region = input("Enter region name: ")
     province = input("Enter province name: ")
-    if region in Thailand:
-        Thailand[region].append(province)
+    if region.lower() in Thailand:
+        Thailand[region.lower()].append(province)
     else:
         Thailand[region] = [province]
     print("Data added successfully!\n")
