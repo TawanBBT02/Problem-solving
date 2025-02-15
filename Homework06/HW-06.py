@@ -1,3 +1,5 @@
+#นายวรานนท์ ใจตรง 6706022510433
+#นายวัชรากร ชูศรียิ่ง 67060227510051
 Thailand = {
     'northern': ['chiang mai', 'lamphun', 'lampang', 'uttaradit', 'phrae', 'nan', 'phayao', 'chiang rai', 'mae hong son'],
     'southern': ['chumphon', 'nakhon si thammarat', 'narathiwat', 'pattani', 'phatthalung', 'songkhla', 'surat thani',
