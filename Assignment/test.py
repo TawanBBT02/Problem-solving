@@ -4,14 +4,14 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-filename = "Data_Graph"
+filename = "Assignment/Data_Graph"
 
 def create_graph(): 
     G = nx.Graph()
     locations = {}
     edges = []
     G, locations, edges = load_graph(filename,G, locations, edges)
-    return G, locations, edges
+    return G, locations
 
 def draw_graph(G, locations, shortest_path=None):
     pos = nx.get_node_attributes(G, 'pos')
@@ -79,7 +79,7 @@ def load_graph(filename, G, locations, edges):
     return G, locations, edges
 
 if __name__ == "__main__":
-    G, locations, edges = create_graph()
+    G, locations = create_graph()
     
     print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
     choice = int(input("Enter your choice: "))

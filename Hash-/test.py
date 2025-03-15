@@ -8,7 +8,7 @@ for i in range(len(data)):
     res = []
     for j in data:
         
-        if j%12 == i:
+        if j%len(data) == i:
             res.append(j)
     result.append(res)
     
