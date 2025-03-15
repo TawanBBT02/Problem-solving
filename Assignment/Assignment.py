@@ -1,7 +1,6 @@
 # นาย วรานนท์ ใจตรง 6706025510433
 # นาย วัชรากร ชูศรียิ่ง 6706022510051
 
-from fileinput import filename
 import networkx as nx
 import matplotlib.pyplot as plt
 
