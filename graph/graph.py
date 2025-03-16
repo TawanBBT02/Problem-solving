@@ -3,7 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 network = nx.Graph()
 network.add_nodes_from([1,2,3,4,5,6,7])
-color_list = ['gold','red','violet','pink','brown','yellow','gray']
+color_list = ['#dd191d','#f06292','#6a1b9a','#b39ddb','#283593','#afbfff','#29b6f6']
 plt.figure(figsize=(6,6))
 plt.title("Example of Graoh Representation",size=10)
 network.add_edge(6,7,weight= 2)
