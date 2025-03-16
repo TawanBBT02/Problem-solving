@@ -10,14 +10,15 @@ def create_graph():
     G = nx.Graph()
     locations = {}
     edges = []
-    G, locations, edges = load_graph(filename,G, locations, edges)
-    return G, locations
+    colors = {}
+    G, locations, edges, colors = load_graph(filename,G, locations, edges, colors)
+    return G, locations, colors
 
-def draw_graph(G, locations, shortest_path=None):
+def draw_graph(G, locations, colors,shortest_path=None,):
     pos = nx.get_node_attributes(G, 'pos')
     
     plt.figure(figsize=(12, 8))
-    nx.draw(G, pos, with_labels=True, node_size=2000, node_color="lightblue", edge_color="gray", font_size=8)
+    nx.draw(G, pos, with_labels=True, node_size=2000, node_color=colors.values(), edge_color="gray", font_size=8)
     
     edge_labels = {(u, v): d['weight'] for u, v, d in G.edges(data=True)}
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8)
@@ -36,14 +37,16 @@ def find_shortest_path(G, start, end):
     except nx.NetworkXNoPath:
         return None
 
-def insert_node(G, locations, name, pos, locate_add_edge, distance):
+def insert_node(G, locations, name, pos, locate_add_edge, distance, color):
     if name in locations:
         print("Node already exists.")
         return
     locations[name] = pos
+
+    colors[name] = color
     G.add_node(name, pos=pos)
     G.add_edge(name, locate_add_edge, weight=distance)
-    save_graph(filename,G, locations)
+    save_graph(filename,G, locations, colors)
     print(f"Location {name} inserted successfully.")
 
 def delete_node(G, locations, name):
@@ -51,41 +54,44 @@ def delete_node(G, locations, name):
         print("Node does not exist.")
         return
     del locations[name]
+    del colors[name]
     G.remove_node(name)
-    save_graph(filename,G, locations)
+    save_graph(filename,G, locations, colors)
     print(f"Location {name} deleted successfully.")
 
-def save_graph(filename,G, locations):
+def save_graph(filename,G, locations, colors):
     data = {
         "locations": locations,
-        "edges": [(u, v, d['weight']) for u, v, d in G.edges(data=True)]
+        "edges": [(u, v, d['weight']) for u, v, d in G.edges(data=True)],
+        "colors": colors
     }
+    
     with open(filename, 'w') as file:
         file.write(str(data))
     print(f"Graph saved to {filename}")
 
-def load_graph(filename, G, locations, edges):
+def load_graph(filename, G, locations, edges, colors):
     with open(filename, 'r') as file:
         data = eval(file.read())
     
     G = nx.Graph()
     locations = data["locations"]
     edges = data["edges"]
+    colors = data["colors"]
     for location, pos in locations.items():
-        G.add_node(location, pos=pos)     
+        G.add_node(location, pos=pos, color=colors[location])     
     for u, v, weight in edges:
         G.add_edge(u, v, weight=weight)
     print(f"Graph loaded from {filename}")
-    return G, locations, edges
+    return G, locations, edges, colors
 
 if __name__ == "__main__":
-    G, locations = create_graph()
+    G, locations, colors = create_graph()
     
-    print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path",
-    "\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
+    print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
     choice = int(input("Enter your choice: "))
     if choice == 1:
-        draw_graph(G, locations)
+        draw_graph(G, locations, colors)
         
     elif choice == 2:
         print("Available Locations:")
@@ -105,7 +111,7 @@ if __name__ == "__main__":
                 print(f"Shortest path to {selected_location_end}:")
                 print(" -> ".join(path))
                 print(f"Total distance: {format(distance,'.2f')} km")
-                draw_graph(G, locations, path)
+                draw_graph(G, locations,colors, path)
             else:
                 print("No path found.")
         else:
@@ -113,6 +119,7 @@ if __name__ == "__main__":
             
     elif choice == 3:
         name = input("Enter location name: ")
+        color = input("Enter location color: ")
         pos = tuple(map(float, input("Enter location position (x, y): ").split(", ")))
         print("Available Locations:")
         for idx, loc in enumerate(locations.keys(), 1):
@@ -122,16 +129,16 @@ if __name__ == "__main__":
         location_list = list(locations.keys())
         selected_location = location_list[location - 1]
         distance = float(input("Enter distance to selected location: "))
-        insert_node(G, locations, name, pos, selected_location, distance)
-        draw_graph(G, locations)
+        insert_node(G, locations, name, pos, selected_location, distance, color)
+        draw_graph(G, locations, colors)
         
     elif choice == 4:
         name = input("Enter location name to delete: ")
         delete_node(G, locations, name)
-        draw_graph(G, locations)
+        draw_graph(G, locations, colors)
 
     elif choice == 5:
-        save_graph(filename,G, locations)
+        save_graph(filename,G, locations, colors)
 
     elif choice == 0:
         exit()
