@@ -1,6 +1,7 @@
 # นาย วรานนท์ ใจตรง 6706025510433
 # นาย วัชรากร ชูศรียิ่ง 6706022510051
 
+import os
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -49,6 +50,17 @@ def insert_node(G, locations, name, pos, locate_add_edge, distance, color):
     save_graph(filename,G, locations, colors)
     print(f"Location {name} inserted successfully.")
 
+def create_first_node():
+    name = input("Enter location name: ")
+    color = input("Enter location color: ")
+    pos = tuple(map(float, input("Enter location position (x, y): ").split(", ")))
+
+    G = nx.Graph()
+    colors[name] = color
+    locations[name] = pos
+    draw_graph(G, locations, colors)
+    print(f"Location {name} inserted successfully.")
+    
 def delete_node(G, locations, name):
     if name not in locations:
         print("Node does not exist.")
@@ -71,6 +83,13 @@ def save_graph(filename,G, locations, colors):
     print(f"Graph saved to {filename}")
 
 def load_graph(filename, G, locations, edges, colors):
+    if os.path.getsize(filename) == 0:
+        print(f"Error: The file {filename} is empty.!!!!!!!!!")
+        create_first_node()
+        return G, locations, edges, colors
+        #raise ValueError(f"Error: The file {filename} is empty.")
+
+    
     with open(filename, 'r') as file:
         data = eval(file.read())
     
@@ -86,6 +105,7 @@ def load_graph(filename, G, locations, edges, colors):
     return G, locations, edges, colors
 
 if __name__ == "__main__":
+    
     G, locations, colors = create_graph()
     
     print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
