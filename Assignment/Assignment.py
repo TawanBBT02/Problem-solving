@@ -147,4 +147,6 @@ if __name__ == "__main__":
         else:
             print("Invalid choice.")
             print("Please try again.")
-    
+        print()
+
+    print("Thank you for using the system.")
