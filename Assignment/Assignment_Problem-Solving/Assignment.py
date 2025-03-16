@@ -4,7 +4,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-filename = "Data_Graph"
+filename = "Data_Graph" #ถ้ารันไม่ได้รบกวนอาจารย์ ย้ายไฟล์ Data_Graph ไปไว้ในโฟลเดอร์เดียวกับไฟล์ Assignment.py
 
 def create_graph(): 
     G = nx.Graph()
@@ -88,58 +88,65 @@ def load_graph(filename, G, locations, edges, colors):
 if __name__ == "__main__":
     G, locations, colors = create_graph()
     
-    print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
-    choice = int(input("Enter your choice: "))
-    if choice == 1:
-        draw_graph(G, locations, colors)
-        
-    elif choice == 2:
-        print("Available Locations:")
-        for idx, loc in enumerate(locations.keys(), 1):
-            print(f"{idx}. {loc}")
-        
-        location_start = int(input("Select location start: "))
-        location_list = list(locations.keys())
-        selected_location_start = location_list[location_start - 1]
-
-        location_end = int(input("Select location end: "))
-        selected_location_end = location_list[location_end - 1]
-
-        if selected_location_start and selected_location_end in locations:
-            path, distance = find_shortest_path(G, selected_location_start, selected_location_end)
-            if path:
-                print(f"Shortest path to {selected_location_end}:")
-                print(" -> ".join(path))
-                print(f"Total distance: {format(distance,'.2f')} km")
-                draw_graph(G, locations,colors, path)
-            else:
-                print("No path found.")
-        else:
-            print("Invalid location selection.")
+    while True:
+        print("Shortest route search system\n1.Show Graph\n2.Find Shortest Path\n3.Insert Location\n4.Delete Location\n5.Save Graph\n0.Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            draw_graph(G, locations, colors)
             
-    elif choice == 3:
-        name = input("Enter location name: ")
-        color = input("Enter location color: ")
-        pos = tuple(map(float, input("Enter location position (x, y): ").split(", ")))
-        print("Available Locations:")
-        for idx, loc in enumerate(locations.keys(), 1):
-            print(f"{idx}. {loc}")
-        
-        location = int(input("Select location to insert distance : "))
-        location_list = list(locations.keys())
-        selected_location = location_list[location - 1]
-        distance = float(input("Enter distance to selected location: "))
-        insert_node(G, locations, name, pos, selected_location, distance, color)
-        draw_graph(G, locations, colors)
-        
-    elif choice == 4:
-        name = input("Enter location name to delete: ")
-        delete_node(G, locations, name)
-        draw_graph(G, locations, colors)
+        elif choice == 2:
+            print("Available Locations:")
+            for idx, loc in enumerate(locations.keys(), 1):
+                print(f"{idx}. {loc}")
+            
+            location_start = int(input("Select location start: "))
+            location_list = list(locations.keys())
+            selected_location_start = location_list[location_start - 1]
 
-    elif choice == 5:
-        save_graph(filename,G, locations, colors)
+            location_end = int(input("Select location end: "))
+            selected_location_end = location_list[location_end - 1]
 
-    elif choice == 0:
-        exit()
-    
+            if selected_location_start and selected_location_end in locations:
+                path, distance = find_shortest_path(G, selected_location_start, selected_location_end)
+                if path:
+                    print(f"Shortest path to {selected_location_end}:")
+                    print(" -> ".join(path))
+                    print(f"Total distance: {format(distance,'.2f')} km")
+                    draw_graph(G, locations,colors, path)
+                else:
+                    print("No path found.")
+            else:
+                print("Invalid location selection.")
+                
+        elif choice == 3:
+            name = input("Enter location name: ")
+            color = input("Enter location color: ")
+            pos = tuple(map(float, input("Enter location position (x, y): ").split(", ")))
+            print("Available Locations:")
+            for idx, loc in enumerate(locations.keys(), 1):
+                print(f"{idx}. {loc}")
+            
+            location = int(input("Select location to insert distance : "))
+            location_list = list(locations.keys())
+            selected_location = location_list[location - 1]
+            distance = float(input("Enter distance to selected location: "))
+            insert_node(G, locations, name, pos, selected_location, distance, color)
+            draw_graph(G, locations, colors)
+            
+        elif choice == 4:
+            name = input("Enter location name to delete: ")
+            delete_node(G, locations, name)
+            draw_graph(G, locations, colors)
+
+        elif choice == 5:
+            save_graph(filename,G, locations, colors)
+
+        elif choice == 0:
+            break
+
+        else:
+            print("Invalid choice.")
+            print("Please try again.")
+        print()
+
+    print("Thank you for using the system.")
