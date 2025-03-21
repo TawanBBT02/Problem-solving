@@ -28,10 +28,27 @@ def r_power_2(data):
         x_y += data[0][i] * data[1][i]
     x = sum(data[0])
     y = sum(data[1])
-    print(x_y, x, y)
     result = ((1/(n-1))*(x_y - ((x*y)/n)))/(standard_deviation(data[0])*standard_deviation(data[1]))
 
     return result
 
 print("R :",r_power_2(data))
-print("R^2 :",r_power_2(data)**2)
+print("R^2 :",r_power_2(data)**2)  
+
+def b(data):
+    xy = 0
+    for i in range(len(data[0])):
+        xy += data[0][i] * data[1][i]
+    x = sum(data[0])
+    y = sum(data[1])
+    x_2 = 0
+    for i in range(len(data[0])):
+        x_2 += data[0][i]**2
+    result = (((n*(xy)) - (x*y)))/((n*(x_2)) - (x**2))
+    return result
+
+def a(data):
+    result = (sum(data[1])/n) - (b(data)*(sum(data[0])/n))
+    return result
+
+print(f"Y = {format(a(data), '.2f')} + {format(b(data), '.3f')}X ")
