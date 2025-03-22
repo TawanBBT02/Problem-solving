@@ -1,13 +1,14 @@
 import random as rd
 import math
-data = [[24, 30, 26, 15, 16, 27, 30, 15, 24, 27], [20, 22, 13, 22, 27, 15, 15, 22, 22, 17]]
-#data = [[1,1,2,3,5],[2,2.5,3,3.5,4]]
+D1 = [[24, 30, 26, 15, 16, 27, 30, 15, 24, 27], [20, 22, 13, 22, 27, 15, 15, 22, 22, 17]]
+D2 = [[38, 39, 18, 22, 26, 30, 28, 42, 25, 38], [24, 40, 23, 26, 16, 17, 34, 27, 26, 29]]
+data = D1
 def sim_table():
     data = []
     for  k in range(2):
         num = []
         for i in range(10):
-            num.append(rd.randint(10, 30))
+            num.append(rd.randint(15, 45))
         data.append(num)
 
     return data
