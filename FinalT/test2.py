@@ -45,7 +45,7 @@ def find_shortest_path(G, start, end):
         return None
 
 # ฟังก์ชันสำหรับเพิ่มโหนด
-def insert_node(G, node, colors, locate_add_edge):
+def insert_node(G, node, colors, locate_add_edge, distance):
     if name in node: # ตรวจโหนดมีอยู่แล้วหรือไม่
         print("Node already exists.")
         return
