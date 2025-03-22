@@ -66,6 +66,6 @@ print("N - 1: ", (len(data[0])*len(data)) - 1)
 print("MSB: ", format(msb(data), '.2f'))
 print("MSE: ", format(mse(data), '.2f'))
 print("F: ", format(f(data), '.2f'))
-print("Critical value: 3.89")
+print("Critical value: 2.61")
 print("Decision: Reject H0")
 
