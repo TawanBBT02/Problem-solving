@@ -11,14 +11,20 @@ D2 = [[18, 19, 35, 23, 33, 20, 40, 41],
         [24, 40, 24, 18, 27, 44, 39, 21], 
         [35, 13, 36, 45, 13, 27, 41, 40]]
 
-data = D2
+D3 = [[45, 35, 45, 22, 20, 12, 41, 16, 38], 
+      [44, 39, 30, 25, 44, 42, 18, 35, 23], 
+      [36, 27, 19, 25, 12, 28, 29, 21, 37], 
+      [19, 21, 28, 39, 41, 42, 13, 21, 13], 
+      [34, 16, 29, 18, 32, 17, 18, 38, 18]]
+
+data = D3
 n = len(data[0]) * len(data)
 k = len(data)
 def anova_table():
     data_anova = []
-    for  k in range(4):
+    for  k in range(5):
         num = []
-        for i in range(8):
+        for i in range(9):
             num.append(rd.randint(12, 45))
         data_anova.append(num)
 

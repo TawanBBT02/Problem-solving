@@ -2,16 +2,16 @@ import random as rd
 D1=[]
 data = D1
 def create_multi_table():
-    n = 10
+    n = 30
     k1 = []
     for i in range(n):
-        k1.append(rd.randint(5,250))
+        k1.append(rd.randint(5,225))
     k2 = []
     for i in range(n):
         k2.append(rd.randint(15,150))
     k3 = []
     for i in range(n):
-        k3.append(rd.randint(30,180))
+        k3.append(rd.randint(30,175))
     k4 = []
     for i in range(n):
         k4.append(rd.randint(20,100))
