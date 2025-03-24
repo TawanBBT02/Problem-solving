@@ -64,3 +64,8 @@ print("Y^2 = ",sum([i**2 for i in data[1]]))
 print("XY = ",sum(data[0][i]*data[1][i] for i in range(len(data[0]))))
 print(f"S.D.X = {format(standard_deviation(data[0]), '.4f')}")
 print(f"S.D.Y = {format(standard_deviation(data[1]), '.4f')}")
+
+for i in range(len(data)):
+        for j in range(len(data[0])):
+            print(data[0][j] * data[1][j], end = " ")
+        print()
