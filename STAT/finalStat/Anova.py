@@ -17,6 +17,12 @@ D3 = [[45, 35, 45, 22, 20, 12, 41, 16, 38],
       [19, 21, 28, 39, 41, 42, 13, 21, 13], 
       [34, 16, 29, 18, 32, 17, 18, 38, 18]]
 
+D4 = [[43, 42, 33, 34, 40, 30, 30, 48, 35], 
+      [23, 27, 26, 15, 13, 44, 18, 45, 43], 
+      [44, 34, 29, 12, 37, 17, 22, 41, 16], 
+      [56, 45, 36, 48, 59, 50, 58, 57, 59], 
+      [37, 27, 30, 16, 37, 36, 20, 14, 36]]
+
 data = D3
 n = len(data[0]) * len(data)
 k = len(data)
@@ -25,7 +31,7 @@ def anova_table():
     for  k in range(5):
         num = []
         for i in range(9):
-            num.append(rd.randint(12, 45))
+            num.append(rd.randint(25, 60))
         data_anova.append(num)
 
     return data_anova
@@ -80,5 +86,8 @@ print("MSB: ", format(msb(data), '.2f'))
 print("MSE: ", format(mse(data), '.2f'))
 print("F: ", format(f(data), '.3f'))
 print("Critical value: 2.61")
-print("Decision: Reject H0")
-
+print("Decision: Reject H1")
+def xij():
+    for i in range(len(data)):
+        print(sum(data[i]))
+print(xij())
