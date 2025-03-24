@@ -2,7 +2,7 @@ import random as rd
 D1=[]
 data = D1
 def create_multi_table():
-    n = 30
+    n = 10
     k1 = []
     for i in range(n):
         k1.append(rd.randint(5,225))
@@ -20,7 +20,7 @@ def create_multi_table():
         k5.append(rd.randint(0,1))
     
     return [k1,k2,k3,k4,k5]
-#print(create_multi_table())
+print(create_multi_table())
 
 def create_multi_table_final():
     n = 10
@@ -44,4 +44,4 @@ def create_multi_table_final():
         k6.append(rd.randint(0,1))
     
     return [k1,k2,k3,k4,k5,k6]
-print(create_multi_table_final())
+#print(create_multi_table_final())
