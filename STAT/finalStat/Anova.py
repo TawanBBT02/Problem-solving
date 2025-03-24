@@ -86,8 +86,9 @@ print("MSB: ", format(msb(data), '.2f'))
 print("MSE: ", format(mse(data), '.2f'))
 print("F: ", format(f(data), '.3f'))
 print("Critical value: 2.61")
-print("Decision: Reject H1")
+print("Decision: Reject H0")
+
 def xij():
     for i in range(len(data)):
         print(sum(data[i]))
-print(xij())
+#print(xij())
