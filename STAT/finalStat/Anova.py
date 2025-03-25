@@ -1,4 +1,5 @@
 import random as rd
+import re
 
 D1 = [[48, 38, 47, 41, 21, 38, 28, 23, 29, 32],
         [33, 29, 44, 35, 33, 41, 43, 31, 50, 39], 
@@ -94,7 +95,12 @@ print("F: ", format(f(data), '.3f'))
 print("Critical value: 2.61")
 print("Decision: Reject H0")
 
-def xij():
+def detail():
+    print("")
+    print("Xij & Xij^2 & EXij^2")
     for i in range(len(data)):
-        print(sum(data[i]))
-#print(xij())
+        print(sum(data[i]),"&",sum(data[i])**2,"&",sum([j**2 for j in data[i]]))
+    print()
+    print(sum([sum(j) for j in data]),"&",sum([sum(j) for j in data])**2)
+    return ""
+print(detail())
